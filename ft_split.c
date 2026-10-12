@@ -6,7 +6,7 @@
 /*   By: kbaaalla <kbaaalla@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/12 11:37:29 by kbaaalla          #+#    #+#             */
-/*   Updated: 2026/10/12 12:01:21 by kbaaalla         ###   ########.fr       */
+/*   Updated: 2026/10/12 16:07:07 by kbaaalla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ void	ft_free(char **result, int k)
 	free(result);
 }
 
-static char help(char const *str , char c , int i , char **result , int k )
+static char *help(char const *str , char c , int i , char **result , int k )
 {
 	while (str[i] != 0)
 	{
@@ -85,7 +85,7 @@ static char help(char const *str , char c , int i , char **result , int k )
 		if (str[i] == 0)
 		{
 			result[k] = NULL;
-			return (result);
+			return(result);
 		}
 		result[k] = make_word(str + i, c);
 		if (!result[k])
@@ -97,7 +97,9 @@ static char help(char const *str , char c , int i , char **result , int k )
 		k++;
 	}
 	result[k] = NULL;
+	return (result);
 }
+
 char	**ft_split(char const *str, char c)
 {
 	char	**result;
@@ -111,7 +113,23 @@ char	**ft_split(char const *str, char c)
 	result = malloc(sizeof(char *) * (word_counter(str, c) + 1));
 	if (!result)
 		return (NULL);
-	
-	result[k] = NULL;
-	return (result);
+	help(str,c,i,result,k);
+	return(result);
+}
+
+#include <stdio.h>
+int main ()
+{
+	char **result;
+	int i = 0;
+	result = ft_split("hello world" , ' ');
+	if (!result)
+		return (0);
+	while (result[i])
+	{
+		printf("%s\n",result[i]);
+		free(result[i]);
+		i++;
+	}
+	return (0);
 }
