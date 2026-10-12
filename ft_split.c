@@ -76,22 +76,8 @@ void	ft_free(char **result, int k)
 	free(result);
 }
 
-static char test(char *ptr)
+static char help(char const *str , char c , int i , char **result , int k )
 {
-    if (!ptr)
-        return (NULL);
-}
-char	**ft_split(char const *str, char c)
-{
-	char	**result;
-	int		i;
-	int		k;
-
-	i = 0;
-	k = 0;
-	test(str);
-	result = malloc(sizeof(char *) * (word_counter(str, c) + 1));
-	test(result);
 	while (str[i] != 0)
 	{
 		while (str[i] == c)
@@ -110,6 +96,22 @@ char	**ft_split(char const *str, char c)
 		i = i + word_len(str + i, c);
 		k++;
 	}
+	result[k] = NULL;
+}
+char	**ft_split(char const *str, char c)
+{
+	char	**result;
+	int		i;
+	int		k;
+
+	i = 0;
+	k = 0;
+	if(!str)
+		return (NULL);
+	result = malloc(sizeof(char *) * (word_counter(str, c) + 1));
+	if (!result)
+		return (NULL);
+	
 	result[k] = NULL;
 	return (result);
 }
