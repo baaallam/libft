@@ -6,7 +6,7 @@
 /*   By: kbaaalla <kbaaalla@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/12 11:37:29 by kbaaalla          #+#    #+#             */
-/*   Updated: 2026/10/12 16:07:07 by kbaaalla         ###   ########.fr       */
+/*   Updated: 2026/10/13 17:05:48 by kbaaalla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,30 +76,6 @@ void	ft_free(char **result, int k)
 	free(result);
 }
 
-static char *help(char const *str , char c , int i , char **result , int k )
-{
-	while (str[i] != 0)
-	{
-		while (str[i] == c)
-			i++;
-		if (str[i] == 0)
-		{
-			result[k] = NULL;
-			return(result);
-		}
-		result[k] = make_word(str + i, c);
-		if (!result[k])
-		{
-			ft_free(result, k);
-			return (NULL);
-		}
-		i = i + word_len(str + i, c);
-		k++;
-	}
-	result[k] = NULL;
-	return (result);
-}
-
 char	**ft_split(char const *str, char c)
 {
 	char	**result;
@@ -108,28 +84,45 @@ char	**ft_split(char const *str, char c)
 
 	i = 0;
 	k = 0;
-	if(!str)
+	if (!str)
 		return (NULL);
 	result = malloc(sizeof(char *) * (word_counter(str, c) + 1));
 	if (!result)
 		return (NULL);
-	help(str,c,i,result,k);
-	return(result);
+	while (str[i] != 0)
+	{
+		skipper (str, c, i);
+		checker (str, i, result, k);
+		result[k] = make_word(str + i, c);
+		checker1 (result, k);
+		i = i + word_len(str + i, c);
+		k++;
+	}
+	result[k] = NULL;
+	return (result);
 }
 
 #include <stdio.h>
-int main ()
+#include <stdlib.h>
+
+char **ft_split(char const *s, char c);
+
+int main(void)
 {
-	char **result;
-	int i = 0;
-	result = ft_split("hello world" , ' ');
-	if (!result)
-		return (0);
-	while (result[i])
-	{
-		printf("%s\n",result[i]);
-		free(result[i]);
-		i++;
-	}
-	return (0);
+    char **result;
+    int i;
+
+    result = ft_split("hello world 42 school", ' ');
+    if (!result)
+        return (1);
+
+    i = 0;
+    while (result[i])
+    {
+        printf("%s\n", result[i]);
+        free(result[i]);
+        i++;
+    }
+    free(result);
+    return (0);
 }
