@@ -6,7 +6,7 @@
 /*   By: kbaaalla <kbaaalla@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/12 11:37:55 by kbaaalla          #+#    #+#             */
-/*   Updated: 2026/10/13 17:28:55 by kbaaalla         ###   ########.fr       */
+/*   Updated: 2026/10/16 20:13:14 by kbaaalla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,13 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdio.h> //test
+# include <string.h> //test
 
+void	*skipper(char const *str, char c, int i);
+void	*checker(char const *str, int i, char **result, int k);
+void	*checker1(char **result, int k);
+void	ft_free(char **result, int k);
 int     ft_isalnum(char c);
 int     ft_isalpha(char c);
 int     ft_isascii(int c);

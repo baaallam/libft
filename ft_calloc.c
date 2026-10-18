@@ -6,7 +6,7 @@
 /*   By: kbaaalla <kbaaalla@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/12 11:36:57 by kbaaalla          #+#    #+#             */
-/*   Updated: 2026/10/12 11:41:11 by kbaaalla         ###   ########.fr       */
+/*   Updated: 2026/10/15 01:26:17 by kbaaalla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,10 @@ void	*ft_calloc(size_t n, size_t size)
 {
 	void	*arr;
 
+	if (n > 0 || size > 0)
+	{
+		return (NULL);
+	}
 	arr = malloc(n * size);
 	if (!arr)
 		return (NULL);

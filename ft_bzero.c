@@ -6,7 +6,7 @@
 /*   By: kbaaalla <kbaaalla@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/12 11:36:55 by kbaaalla          #+#    #+#             */
-/*   Updated: 2026/10/12 11:39:56 by kbaaalla         ###   ########.fr       */
+/*   Updated: 2026/10/18 00:39:47 by kbaaalla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	unsigned char	*tmp_ptr;
+	unsigned char	*p;
 
-	tmp_ptr = (unsigned char *)s;
+	p = (unsigned char *)s;
 	while (n > 0)
 	{
-		*(tmp_ptr++) = 0;
+		*(p++) = 0;
 		n--;
 	}
 }

@@ -6,11 +6,12 @@
 /*   By: kbaaalla <kbaaalla@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/12 11:37:29 by kbaaalla          #+#    #+#             */
-/*   Updated: 2026/10/13 17:05:48 by kbaaalla         ###   ########.fr       */
+/*   Updated: 2026/10/16 20:20:23 by kbaaalla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 
 int	word_counter(char const *str, char c)
 {
@@ -31,6 +32,8 @@ int	word_counter(char const *str, char c)
 	}
 	return (counter);
 }
+
+//strlen call
 
 int	word_len(char const *str, char c)
 {
@@ -63,6 +66,29 @@ char	*make_word(char const *str, char c)
 	return (word);
 }
 
+void	skipper(char const *str, char c, int i)
+{
+	while (str[i] == c)
+		i++;
+}
+
+void	checker(char const *str, int i, char **result, int k)
+{
+	if (str[i] == 0)
+	{
+		result[k] = NULL;
+		return (result);
+	}
+}
+
+void	checker1(char **result, int k)
+{
+	if (!result[k])
+	{
+		ft_free(result, k);
+		return (NULL);
+	}
+}
 void	ft_free(char **result, int k)
 {
 	int	i;
