@@ -6,14 +6,23 @@
 /*   By: kbaaalla <kbaaalla@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/12 11:37:29 by kbaaalla          #+#    #+#             */
-/*   Updated: 2026/10/16 20:20:23 by kbaaalla         ###   ########.fr       */
+/*   Updated: 2026/10/18 20:06:10 by kbaaalla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+static	int	word_len(char const *str, char c)
+{
+	int	len;
 
-int	word_counter(char const *str, char c)
+	len = 0;
+	while (str[len] != 0 && str[len] != c)
+		len++;
+	return (len);
+}
+
+static	int	word_counter(char const *str, char c)
 {
 	int	i;
 	int	counter;
@@ -33,19 +42,7 @@ int	word_counter(char const *str, char c)
 	return (counter);
 }
 
-//strlen call
-
-int	word_len(char const *str, char c)
-{
-	int	len;
-
-	len = 0;
-	while (str[len] != 0 && str[len] != c)
-		len++;
-	return (len);
-}
-
-char	*make_word(char const *str, char c)
+static char	*make_word(char const *str, char c)
 {
 	int		i;
 	int		j;
@@ -66,30 +63,7 @@ char	*make_word(char const *str, char c)
 	return (word);
 }
 
-void	skipper(char const *str, char c, int i)
-{
-	while (str[i] == c)
-		i++;
-}
-
-void	checker(char const *str, int i, char **result, int k)
-{
-	if (str[i] == 0)
-	{
-		result[k] = NULL;
-		return (result);
-	}
-}
-
-void	checker1(char **result, int k)
-{
-	if (!result[k])
-	{
-		ft_free(result, k);
-		return (NULL);
-	}
-}
-void	ft_free(char **result, int k)
+static	char	**ft_free(char **result, int k)
 {
 	int	i;
 
@@ -100,6 +74,7 @@ void	ft_free(char **result, int k)
 		i++;
 	}
 	free(result);
+	return (NULL);
 }
 
 char	**ft_split(char const *str, char c)
@@ -117,10 +92,11 @@ char	**ft_split(char const *str, char c)
 		return (NULL);
 	while (str[i] != 0)
 	{
-		skipper (str, c, i);
-		checker (str, i, result, k);
+		while (str[i] == c && str[i] != 0)
+			i++;
 		result[k] = make_word(str + i, c);
-		checker1 (result, k);
+		if (!result[k])
+			return (ft_free(result, k));
 		i = i + word_len(str + i, c);
 		k++;
 	}
@@ -128,27 +104,20 @@ char	**ft_split(char const *str, char c)
 	return (result);
 }
 
-#include <stdio.h>
-#include <stdlib.h>
-
-char **ft_split(char const *s, char c);
-
-int main(void)
-{
-    char **result;
-    int i;
-
-    result = ft_split("hello world 42 school", ' ');
-    if (!result)
-        return (1);
-
-    i = 0;
-    while (result[i])
-    {
-        printf("%s\n", result[i]);
-        free(result[i]);
-        i++;
-    }
-    free(result);
-    return (0);
-}
+// int main(void)
+// {
+//     char **result;
+//     int i; 
+//     result = ft_split("helsblo,,,world sb ,ha",' ');
+//     if (!result)
+//         return (1);
+//     i = 0;
+//     while (result[i])
+//     {
+//         printf("%s\n", result[i]);
+//         free(result[i]);
+//         i++;
+//     }
+//     free(result);
+//     return (0);
+// }
