@@ -6,16 +6,16 @@
 /*   By: kbaaalla <kbaaalla@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/12 11:37:46 by kbaaalla          #+#    #+#             */
-/*   Updated: 2026/10/18 22:11:48 by kbaaalla         ###   ########.fr       */
+/*   Updated: 2026/10/19 02:41:22 by kbaaalla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strrchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
-	char *ptr;
-	char *save;
+	char	*ptr;
+	char	*save;
 
 	ptr = (char *)s;
 	save = NULL;
@@ -28,4 +28,4 @@ char *ft_strrchr(const char *s, int c)
 	if (*ptr == (unsigned char)c)
 		return (ptr);
 	return (save);
-}   
+}
