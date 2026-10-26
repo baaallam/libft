@@ -32,4 +32,4 @@ char	*ft_strchr(const char *s, int c)
 // 	printf("found: %s", result);
 
 // 	return (0);
-// } 
+// }
