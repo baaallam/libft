@@ -6,7 +6,7 @@
 /*   By: kbaaalla <kbaaalla@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 14:00:33 by kbaaalla          #+#    #+#             */
-/*   Updated: 2026/10/26 14:02:06 by kbaaalla         ###   ########.fr       */
+/*   Updated: 2026/10/27 17:37:48 by kbaaalla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,4 +14,8 @@
 
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
+	if (lst == NULL)
+		return ;
+	del(lst->content);
+	free(lst);
 }
