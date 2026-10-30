@@ -1,113 +1,328 @@
-*This project has been created as part of the 42 curriculum by
-`kbaaalla`
-
 # Libft
 
-## Description
+> My own C library — reimplementing essential functions from the C standard library and building additional utilities from scratch.
 
-**Libft** is a custom C library developed as part of the 42 curriculum.
-Its goal is to recreate a selection of standard C library functions and
-build additional utility functions that can be reused in future C
-projects.
+## 👤 Author
 
-The project helps strengthen understanding of: - Pointers and memory
-addresses. - Strings, arrays, and character handling. - Dynamic memory
-allocation with `malloc` and `free`. - Memory manipulation. - Linked
-lists and structures (if the bonus part is included). - Writing
-reusable, reliable C code.
+- **Login:** `kbaaalla`
+- **School:** 1337
+- **Project:** Libft
+- **Language:** C
 
-The library is built as a static archive named `libft.a`.
+---
 
-## Instructions
+## 📖 About the Project
 
-### Requirements
+**Libft** is one of the first projects in the 42 / 1337 Common Core curriculum.
 
--   A C compiler, such as `cc` or `gcc`.
--   `make`.
--   The 42 **Norminette** tool, if you want to check compliance with the
-    42 coding standard.
+The goal is to create a personal C library by reimplementing standard C library functions and developing additional utility functions.
+
+Instead of relying entirely on existing library functions, this project requires understanding how they work internally and recreating their behavior.
+
+The project focuses on fundamental C programming concepts:
+
+- Memory management and dynamic allocation.
+- Pointers and pointer arithmetic.
+- String manipulation.
+- Memory manipulation.
+- Type conversions.
+- Function pointers.
+- Data structures and linked lists.
+- Error handling and edge cases.
+
+The final result is a reusable static library named `libft.a`, which can be included in future C projects.
+
+---
+
+## 🎯 Project Objectives
+
+The main objectives of this project are to:
+
+1. Understand how standard C library functions work.
+2. Develop a deeper understanding of pointers and memory.
+3. Learn how to allocate and free memory safely.
+4. Handle edge cases and prevent undefined behavior.
+5. Write clean, modular code that follows the 42 Norm.
+6. Understand compilation, static libraries, and Makefiles.
+7. Build a reusable library for future projects.
+
+---
+
+## 🧩 Project Structure
+
+The project is organized into three functional groups, all belonging to the main Libft deliverable.
+
+### Part 1 — Libc Functions
+
+Reimplementations of standard C library functions.
+
+**Character checking and conversion**
+
+- `ft_isalpha`
+- `ft_isdigit`
+- `ft_isalnum`
+- `ft_isascii`
+- `ft_isprint`
+- `ft_toupper`
+- `ft_tolower`
+
+**Memory manipulation**
+
+- `ft_memset`
+- `ft_bzero`
+- `ft_memcpy`
+- `ft_memmove`
+- `ft_memchr`
+- `ft_memcmp`
+
+**String manipulation**
+
+- `ft_strlen`
+- `ft_strlcpy`
+- `ft_strlcat`
+- `ft_strchr`
+- `ft_strrchr`
+- `ft_strncmp`
+- `ft_strnstr`
+- `ft_strdup`
+
+**Conversions and allocation**
+
+- `ft_atoi`
+- `ft_calloc`
+
+### Part 2 — Additional Functions
+
+Utility functions that extend the library.
+
+**String manipulation**
+
+- `ft_substr`
+- `ft_strjoin`
+- `ft_strtrim`
+- `ft_split`
+- `ft_itoa`
+- `ft_strmapi`
+- `ft_striteri`
+
+**File descriptor output**
+
+- `ft_putchar_fd`
+- `ft_putstr_fd`
+- `ft_putendl_fd`
+- `ft_putnbr_fd`
+
+### Part 3 — Linked Lists
+
+Implementation of a singly linked list using the `t_list` structure.
+
+```c
+typedef struct s_list
+{
+    void            *content;
+    struct s_list   *next;
+}   t_list;
+```
+
+**Linked list functions**
+
+- `ft_lstnew`
+- `ft_lstadd_front`
+- `ft_lstsize`
+- `ft_lstlast`
+- `ft_lstadd_back`
+- `ft_lstdelone`
+- `ft_lstclear`
+- `ft_lstiter`
+- `ft_lstmap`
+
+---
+
+## ⚙️ Compilation
+
+The project uses a Makefile to compile all required source files and generate the static library, including the linked-list functions.
 
 ### Compile the library
 
-From the root of the repository, run:
-
-``` bash
+```bash
 make
 ```
 
-This compiles the source files and creates `libft.a`.
+### Remove object files
 
-### Use the library in a project
+```bash
+make clean
+```
 
-Include `libft.h` in your C source file:
+### Remove object files and the library
 
-``` c
+```bash
+make fclean
+```
+
+### Recompile everything
+
+```bash
+make re
+```
+
+After successful compilation, the static library file should be:
+
+```text
+libft.a
+```
+
+---
+
+## 🚀 How to Use the Library
+
+Include the library header in your C source file:
+
+```c
 #include "libft.h"
 ```
 
-Compile your source file together with the library. For example:
+Compile your program and link it with `libft.a`:
 
-``` bash
+```bash
 cc -Wall -Wextra -Werror main.c -L. -lft -o program
 ```
 
-Then run the program:
+Run the executable:
 
-``` bash
+```bash
 ./program
 ```
 
-Make sure `main.c` is replaced with your own source file if it has a
-different name.
+If your header or library is in another directory, adjust the include and library paths accordingly.
 
-### Makefile commands
+---
 
--   `make`: compile the library.
--   `make clean`: remove object files.
--   `make fclean`: remove object files and the `libft.a` library.
--   `make re`: clean and rebuild the library.
+## 🧪 Testing and Debugging
 
+Testing is an important part of this project. Each function should be tested with normal inputs, boundary conditions, and invalid cases where applicable.
 
-### Check the code
+### Useful Tools
 
-If Norminette is installed, run:
+**Norminette**
 
-``` bash
+Check whether the source files follow the 42 coding standard.
+
+```bash
 norminette
 ```
 
-You can also compile with strict compiler flags:
+**Valgrind**
 
-``` bash
-cc -Wall -Wextra -Werror
+Detect memory leaks and invalid memory accesses.
+
+```bash
+valgrind --leak-check=full --show-leak-kinds=all ./program
 ```
 
-Run your own tests to check normal inputs, edge cases, and allocation
-failures where applicable.
+**Compiler warnings**
 
-## Resources
+Compile with strict warning flags:
 
-### Documentation and references
+```bash
+cc -Wall -Wextra -Werror main.c -L. -lft -o program
+```
 
--   [C standard library reference ---
-    cppreference](https://en.cppreference.com/w/c)
--   [The Open Group --- POSIX
-    specifications](https://pubs.opengroup.org/onlinepubs/9699919799/)
--   [GNU Compiler Collection (GCC)
-    documentation](https://gcc.gnu.org/onlinedocs/)
--   [GNU Make manual](https://www.gnu.org/software/make/manual/)
--   [42 Norminette](https://github.com/42School/norminette)
+**Makefile debugging**
 
-These references were used as learning and reference material for C
-functions, compilation, and project conventions.
+Inspect how Make decides which targets need rebuilding:
 
-### AI usage
+```bash
+make --debug
+```
 
-AI assistance was used to help organize and write this README and to
-clarify programming concepts during development. The project code should
-be reviewed and tested by the author, and any AI assistance used
-directly for implementation should be described accurately here.
+### Important Test Cases
 
-## Author
+- Empty strings.
+- Zero-length operations.
+- Null terminators.
+- Exact-fit buffers.
+- Truncated strings.
+- Maximum and minimum integer values.
+- Allocation failures.
+- Overlapping memory regions.
+- Empty linked lists.
+- Single-node linked lists.
+- Memory cleanup and ownership.
 
--   `kbaaalla` --- 42 student
+---
+
+## 📚 Learning Resources
+
+The following resources are useful for understanding C, memory management, standard library behavior, and the tools used throughout the project.
+
+### C Documentation
+
+- [cppreference — C Language](https://en.cppreference.com/w/c)
+- [GNU C Reference Manual](https://www.gnu.org/software/gnu-c-manual/)
+- [Linux Manual Pages](https://man7.org/linux/man-pages/)
+
+### Function Documentation
+
+Use the terminal to read manual pages for standard functions:
+
+```bash
+man 3 strlen
+man 3 memcpy
+man 3 memmove
+man 3 strncmp
+man 3 malloc
+```
+
+For additional details, consult the relevant manual page available on your operating system.
+
+### Memory Management
+
+- [Beej's Guide to C Programming](https://beej.us/guide/bgc/)
+- [GNU C Library Documentation](https://www.gnu.org/software/libc/manual/)
+- [Valgrind Documentation](https://valgrind.org/docs/manual/manual.html)
+
+### Compilation and Makefiles
+
+- [GNU Make Manual](https://www.gnu.org/software/make/manual/)
+- [Makefile Tutorial](https://makefiletutorial.com/)
+
+### 42 / 1337 Resources
+
+- [42 School](https://42.fr/)
+- [Norminette](https://github.com/42School/norminette)
+- [Francinette — Libft Testing](https://github.com/xicodomingues/francinette)
+
+*Note: Third-party testers are useful for additional validation, but they do not replace the official project subject or evaluation requirements.*
+
+---
+
+## 🧠 Key Concepts Learned
+
+This project provides practical experience with:
+
+| Concept | What it teaches |
+|---|---|
+| Pointers | Addresses, dereferencing, pointer arithmetic |
+| Memory | Bytes, memory layout, and valid memory access |
+| `malloc` / `free` | Dynamic allocation and memory ownership |
+| Strings | Null termination and bounded operations |
+| Function pointers | Passing functions as arguments |
+| Structures | Organizing related data |
+| Linked lists | Dynamic data structures and node traversal |
+| Makefiles | Automated compilation and dependency management |
+| Static libraries | Creating and linking reusable compiled code |
+
+---
+
+## 🏁 Final Goal
+
+The goal is not simply to make the functions pass tests.
+
+It is to understand their behavior, memory requirements, edge cases, and implementation logic well enough to build reliable C programs independently.
+
+**Libft is the foundation for the projects that follow in the 42 / 1337 curriculum.**
+
+---
+
+*Developed by `kbaaalla` — 1337 | 42 Network*
