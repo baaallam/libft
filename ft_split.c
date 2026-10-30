@@ -6,7 +6,7 @@
 /*   By: kbaaalla <kbaaalla@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/12 11:37:29 by kbaaalla          #+#    #+#             */
-/*   Updated: 2026/10/19 02:09:13 by kbaaalla         ###   ########.fr       */
+/*   Updated: 2026/10/30 03:13:33 by kbaaalla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,7 +108,7 @@ char	**ft_split(char const *str, char c)
 // {
 //     char **result;
 //     int i;
-//     result = ft_split("hello ffr",' ');
+//     result = ft_split("hello*world*42",'*');
 //     if (!result)
 //         return (1);
 //     i = 0;

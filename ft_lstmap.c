@@ -6,7 +6,7 @@
 /*   By: kbaaalla <kbaaalla@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 14:01:26 by kbaaalla          #+#    #+#             */
-/*   Updated: 2026/10/28 19:39:11 by kbaaalla         ###   ########.fr       */
+/*   Updated: 2026/10/30 03:05:58 by kbaaalla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	while (lst)
 	{
 		node = ft_lstnew(lst->content);
-		if (node == NULL)
+		if (node == NULL )
 		{
 			ft_lstclear(&new_list, del);
 			return (0);
@@ -73,9 +73,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 // 	pt2 = ft_lstnew(s3);
 // 	head->next = pt1;
 // 	pt1->next = pt2;
-// 	// char str[] = "oussama";
-// 	// char *res = ftoup(str);
-// 	// printf("%s\n",res);
+
 // 	pra = ft_lstmap(head, ftoup, del);
 // 	while (pra != NULL)
 // 	{

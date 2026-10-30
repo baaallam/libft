@@ -1,5 +1,5 @@
 *This project has been created as part of the 42 curriculum by
-`kbaaalla`{=html}.*
+`kbaaalla`
 
 # Libft
 
@@ -110,4 +110,4 @@ directly for implementation should be described accurately here.
 
 ## Author
 
--   `kbaaalla`{=html} --- 42 student
+-   `kbaaalla` --- 42 student
