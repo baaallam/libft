@@ -6,7 +6,7 @@
 /*   By: kbaaalla <kbaaalla@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/19 03:34:47 by kbaaalla          #+#    #+#             */
-/*   Updated: 2026/10/26 13:48:56 by kbaaalla         ###   ########.fr       */
+/*   Updated: 2026/11/01 23:21:58 by kbaaalla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 		f(i, &s[i]);
 		i++;
 	}
-	s[i] = 0;
 }
 
 // void	to_upper(unsigned int i, char *c)
@@ -36,7 +35,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 
 // int	main(void)
 // {
-// 	char	str1[] = "hello world";
+// 	char	str1[] = "hello";
 
 // 	ft_striteri(str1, to_upper);
 // 	printf("test 1 - to_upper: \"%s\"\n", str1);

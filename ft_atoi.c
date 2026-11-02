@@ -6,17 +6,17 @@
 /*   By: kbaaalla <kbaaalla@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/12 11:36:52 by kbaaalla          #+#    #+#             */
-/*   Updated: 2026/10/19 19:14:35 by kbaaalla         ###   ########.fr       */
+/*   Updated: 2026/11/02 02:44:58 by kbaaalla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(char *str)
+int	ft_atoi(const char *str)
 {
-	int	res;
-	int	sign;
-	int	i;
+	long	res;
+	int		sign;
+	int		i;
 
 	res = 0;
 	sign = 1;
@@ -34,5 +34,5 @@ int	ft_atoi(char *str)
 		res = res * 10 + (str[i] - '0');
 		i++;
 	}
-	return (res * sign);
+	return ((int)(res * sign));
 }

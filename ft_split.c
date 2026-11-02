@@ -6,7 +6,7 @@
 /*   By: kbaaalla <kbaaalla@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/12 11:37:29 by kbaaalla          #+#    #+#             */
-/*   Updated: 2026/10/30 03:13:33 by kbaaalla         ###   ########.fr       */
+/*   Updated: 2026/10/31 20:28:34 by kbaaalla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,6 +94,8 @@ char	**ft_split(char const *str, char c)
 	{
 		while (str[i] == c && str[i] != 0)
 			i++;
+		if (str[i] == 0)
+			break ;
 		result[k] = make_word(str + i, c);
 		if (!result[k])
 			return (ft_free(result, k));

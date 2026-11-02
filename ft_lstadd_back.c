@@ -6,7 +6,7 @@
 /*   By: kbaaalla <kbaaalla@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/25 18:01:55 by kbaaalla          #+#    #+#             */
-/*   Updated: 2026/10/26 19:46:31 by kbaaalla         ###   ########.fr       */
+/*   Updated: 2026/11/02 00:56:58 by kbaaalla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,22 +27,14 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	last->next = new;
 }
 
-// int	main(void)
+// int main(void)
 // {
-// 	t_list	*head;
-
-// 	head = NULL;
-
-// 	// Add two elements to the back
-// 	ft_lstadd_back(&head, ft_lstnew("First"));
-// 	ft_lstadd_back(&head, ft_lstnew("Last"));
-
-// 	// Print both to verify the order
-// 	printf("1: %s\n", (char *)head->content);
-// 	printf("2: %s\n", (char *)head->next->content);
-
-// 	// Clean up
-// 	free(head->next);
-// 	free(head);
-// 	return (0);
+//     t_list *lst = NULL;
+//     int *n = malloc(sizeof(int));
+//     *n = 42;
+//     ft_lstadd_back(&lst, ft_lstnew(n));
+//     printf("%d\n", *(int *)lst->content);
+//     free(n);
+//     free(lst);
+//     return (0);
 // }

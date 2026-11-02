@@ -6,7 +6,7 @@
 /*   By: kbaaalla <kbaaalla@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/25 17:31:45 by kbaaalla          #+#    #+#             */
-/*   Updated: 2026/10/25 17:59:59 by kbaaalla         ###   ########.fr       */
+/*   Updated: 2026/11/02 01:06:18 by kbaaalla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,21 +23,15 @@ t_list	*ft_lstlast(t_list *lst)
 	return (lst);
 }
 
-// int main (void)
+// int	main(void)
 // {
-//     t_list	*node;
+// 	t_list	*lst;
 // 	t_list	*last;
-
-// 	// Create one node
-// 	node = ft_lstnew("Only Element");
-
-// 	// Get the last node
-// 	last = ft_lstlast(node);
-//     // Print result
-// 	if (last != NULL)
-// 		printf("Last node content: %s\n", (char *)last->content);
-// 	else
-// 		printf("Failed: Returned NULL\n");
-//     free(node);
-//     return (0);
+// 	lst = ft_lstnew("first");
+// 	ft_lstadd_back(&lst, ft_lstnew("second"));
+// 	ft_lstadd_back(&lst, ft_lstnew("third"));
+// 	last = ft_lstlast(lst);
+// 	if (last)
+// 		printf("last: %s\n", (char *)last->content);
+// 	return (0);
 // }
