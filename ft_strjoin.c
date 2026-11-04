@@ -6,7 +6,7 @@
 /*   By: kbaaalla <kbaaalla@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/12 11:37:35 by kbaaalla          #+#    #+#             */
-/*   Updated: 2026/10/12 11:37:36 by kbaaalla         ###   ########.fr       */
+/*   Updated: 2026/11/04 00:41:01 by kbaaalla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	size_t	lens1;
 	size_t	lens2;
 
+	if (!s1 || !s2)
+		return (NULL);
 	lens1 = ft_strlen(s1);
 	lens2 = ft_strlen(s2);
 	result = malloc(sizeof(char) * (lens1 + lens2 + 1));

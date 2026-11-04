@@ -6,7 +6,7 @@
 /*   By: kbaaalla <kbaaalla@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/25 16:48:49 by kbaaalla          #+#    #+#             */
-/*   Updated: 2026/11/02 01:59:15 by kbaaalla         ###   ########.fr       */
+/*   Updated: 2026/11/03 23:39:38 by kbaaalla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,3 @@ unsigned int	ft_lstsize(t_list *lst)
 	}
 	return (i);
 }
-// int main (void)
-// {
-//     t_list *a;
-//     a = NULL;
-//     int c;
-//     c = ft_lstsize(a);
-//     printf("%d",c);
-//     return (0);
-// }

@@ -6,7 +6,7 @@
 /*   By: kbaaalla <kbaaalla@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/12 11:37:09 by kbaaalla          #+#    #+#             */
-/*   Updated: 2026/10/12 11:37:10 by kbaaalla         ###   ########.fr       */
+/*   Updated: 2026/11/04 00:58:28 by kbaaalla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,26 +39,26 @@ static void	fill_fct(char *result, long n, int i)
 
 char	*ft_itoa(int nb)
 {
-	long	n;
+	long	number;
 	char	*result;
 	int		len;
 	int		i;
 
-	n = nb;
-	len = num_len(n);
+	number = nb;
+	len = num_len(number);
 	result = malloc(sizeof(char) * (len + 1));
 	if (!result)
 		return (NULL);
 	i = len;
 	result[i] = 0;
 	i--;
-	if (n < 0)
+	if (number < 0)
 	{
 		result[0] = '-';
-		n = -n;
+		number = -number;
 	}
-	if (n == 0)
+	if (number == 0)
 		result[0] = '0';
-	fill_fct(result, n, i);
+	fill_fct(result, number, i);
 	return (result);
 }

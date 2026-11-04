@@ -6,7 +6,7 @@
 /*   By: kbaaalla <kbaaalla@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/12 11:37:29 by kbaaalla          #+#    #+#             */
-/*   Updated: 2026/10/31 20:28:34 by kbaaalla         ###   ########.fr       */
+/*   Updated: 2026/11/03 23:39:50 by kbaaalla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,21 +105,3 @@ char	**ft_split(char const *str, char c)
 	result[k] = NULL;
 	return (result);
 }
-
-// int main(void)
-// {
-//     char **result;
-//     int i;
-//     result = ft_split("hello*world*42",'*');
-//     if (!result)
-//         return (1);
-//     i = 0;
-//     while (result[i])
-//     {
-//         printf("%s\n", result[i]);
-//         free(result[i]);
-//         i++;
-//     }
-//     free(result);
-//     return (0);
-// }

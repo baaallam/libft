@@ -6,7 +6,7 @@
 /*   By: kbaaalla <kbaaalla@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/19 03:34:19 by kbaaalla          #+#    #+#             */
-/*   Updated: 2026/10/31 19:48:58 by kbaaalla         ###   ########.fr       */
+/*   Updated: 2026/11/03 23:40:21 by kbaaalla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 		j--;
 	return (ft_substr(s1, i, j - i));
 }
-
-// int	main(void)
-// {
-// 	printf("%s\n", ft_strtrim("**hey its me**", "*"));
-
-// 	return (0);
-// }
