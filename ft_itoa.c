@@ -6,7 +6,7 @@
 /*   By: kbaaalla <kbaaalla@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/12 11:37:09 by kbaaalla          #+#    #+#             */
-/*   Updated: 2026/11/04 00:58:28 by kbaaalla         ###   ########.fr       */
+/*   Updated: 2026/11/05 23:48:43 by kbaaalla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ char	*ft_itoa(int nb)
 
 	number = nb;
 	len = num_len(number);
-	result = malloc(sizeof(char) * (len + 1));
+	result = malloc(len + 1);
 	if (!result)
 		return (NULL);
 	i = len;

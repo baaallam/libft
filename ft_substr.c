@@ -6,20 +6,20 @@
 /*   By: kbaaalla <kbaaalla@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/12 11:37:48 by kbaaalla          #+#    #+#             */
-/*   Updated: 2026/10/31 01:00:12 by kbaaalla         ###   ########.fr       */
+/*   Updated: 2026/11/05 23:43:00 by kbaaalla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char	*allo(const char *s, size_t len, unsigned int start)
+static char	*allocation(const char *s, size_t len, unsigned int start)
 {
 	char	*result;
 
 	if (ft_strlen(s) - start < len)
-		result = malloc(sizeof(char) * (ft_strlen(s) - start) + 1);
+		result = malloc((ft_strlen(s) - start) + 1);
 	else
-		result = malloc(sizeof(char) * (len + 1));
+		result = malloc(len + 1);
 	return (result);
 }
 
@@ -33,7 +33,7 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 		return (NULL);
 	if (ft_strlen(s) <= (size_t)start)
 		return (ft_strdup(""));
-	result = allo(s, len, start);
+	result = allocation(s, len, start);
 	if (!result)
 		return (NULL);
 	while (s[start] != '\0' && j < len)

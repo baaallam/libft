@@ -15,6 +15,7 @@ The project trains the following fundamentals:
 - Linked lists
 - Edge cases, undefined behavior and memory-leak prevention
 - Compilation, Makefiles and static libraries (`ar`)
+
 ### Library overview
  
 All sources are at the root of the repository, one function per `ft_*.c` file, with the single header `libft.h`. No global variables are used, and helper functions are `static`.
@@ -128,3 +129,13 @@ valgrind --leak-check=full --show-leak-kinds=all ./program   # leaks and invalid
 - [GNU Make manual](https://www.gnu.org/software/make/manual/)
 - [Valgrind documentation](https://valgrind.org/docs/manual/manual.html)
 - [Norminette](https://github.com/42School/norminette)
+
+### AI usage
+
+**What it was used for:**
+
+- Understanding concepts: pointers, memory allocation and ownership, null termination, function pointers, linked lists.
+- Reviewing my reasoning and explaining why a piece of my code was wrong, with test cases that exposed the bug.
+- Reviewing edge cases (empty strings, zero length, overlapping memory, `INT_MIN`, allocation failures).
+- Studying the theory behind each function and the compilation process (Makefile, static libraries).
+- Helping write this README.

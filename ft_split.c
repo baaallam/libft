@@ -6,7 +6,7 @@
 /*   By: kbaaalla <kbaaalla@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/12 11:37:29 by kbaaalla          #+#    #+#             */
-/*   Updated: 2026/11/03 23:39:50 by kbaaalla         ###   ########.fr       */
+/*   Updated: 2026/11/05 23:47:03 by kbaaalla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ static char	*make_word(char const *str, char c)
 
 	i = 0;
 	j = 0;
-	word = malloc(sizeof(char) * (word_len(str, c) + 1));
+	word = malloc(word_len(str, c) + 1);
 	if (!word)
 		return (NULL);
 	while (str[i] != 0 && str[i] != c)
@@ -87,7 +87,7 @@ char	**ft_split(char const *str, char c)
 	k = 0;
 	if (!str)
 		return (NULL);
-	result = malloc(sizeof(char *) * (word_counter(str, c) + 1));
+	result = malloc(word_counter(str, c) + 1);
 	if (!result)
 		return (NULL);
 	while (str[i] != 0)
