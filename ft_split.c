@@ -6,7 +6,7 @@
 /*   By: kbaaalla <kbaaalla@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/12 11:37:29 by kbaaalla          #+#    #+#             */
-/*   Updated: 2026/11/05 23:47:03 by kbaaalla         ###   ########.fr       */
+/*   Updated: 2026/11/06 18:21:01 by kbaaalla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ char	**ft_split(char const *str, char c)
 	k = 0;
 	if (!str)
 		return (NULL);
-	result = malloc(word_counter(str, c) + 1);
+	result = malloc(sizeof(void *) * (word_counter(str, c) + 1));
 	if (!result)
 		return (NULL);
 	while (str[i] != 0)
@@ -105,3 +105,14 @@ char	**ft_split(char const *str, char c)
 	result[k] = NULL;
 	return (result);
 }
+// // int main(){
+// // 			char **arr=ft_split("lorem ipsum dolor sit amet,
+// 					consectetur adipiscing elit. Sed non risus. Suspendisse",
+// 					' ');
+// //  int i=0;
+// //  while(arr[i]){
+// // 	printf("%s\n",arr[i]);
+// // 	i++;
+// //  }
+
+// // }
